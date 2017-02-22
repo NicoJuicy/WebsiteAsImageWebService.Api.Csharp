@@ -7,6 +7,7 @@ Have https://github.com/NicoJuicy/WebsiteAsImageWebService running somewhere ( a
 
 ## howto use 
 
+Nuget: WebsiteAsImageWebService.Api --> https://www.nuget.org/packages/WebsiteAsImageWebService.Api/
 
 ```csharp
   //This will store the stream to a file
