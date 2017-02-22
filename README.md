@@ -7,6 +7,8 @@ Have https://github.com/NicoJuicy/WebsiteAsImageWebService running somewhere
 
 ## howto use
 
+
+```csharp
   //This will store the stream to a file
   //The api fetches the file as a memorystream, no filename is given by the server
   
