@@ -5,12 +5,13 @@ An api for WebsiteAsImageWebService in dotnet core, written in c#
 
 Have https://github.com/NicoJuicy/WebsiteAsImageWebService running somewhere
 
-## howto use
+## howto use 
 
 
 ```csharp
   //This will store the stream to a file
   //The api fetches the file as a memorystream, no filename is given by the server
+  //Copied from the test unit, which is not async ;)
   
   var client = new WebsiteAsImageWebService.Api.WebsiteAsImageClient("localhost:8080");
   var stream = client.GetScreenshot("http://www.google.com").Result;
