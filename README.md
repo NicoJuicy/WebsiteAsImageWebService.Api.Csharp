@@ -3,7 +3,7 @@ An api for WebsiteAsImageWebService in dotnet core, written in c#
 
 ## Dependencies
 
-Have https://github.com/NicoJuicy/WebsiteAsImageWebService running somewhere
+Have https://github.com/NicoJuicy/WebsiteAsImageWebService running somewhere ( a selfhosted nodejs website screenshot grabber)
 
 ## howto use 
 
