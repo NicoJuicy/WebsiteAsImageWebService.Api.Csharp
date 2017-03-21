@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
-using System.IO;
 
 namespace WebsiteAsImageWebService.Api
 {
@@ -30,7 +27,7 @@ namespace WebsiteAsImageWebService.Api
         }
 
 
-        public async Task<System.IO.Stream> GetScreenshot(string UrlToGrab)
+        public async Task<System.IO.Stream> GetScreenshot(string UrlToGrab, bool frontOnly = true)
         {
             var compressClient = new HttpClientHandler()
             {
@@ -45,8 +42,14 @@ namespace WebsiteAsImageWebService.Api
                 string encodedUrlParameter = Uri.EscapeDataString((UrlToGrab));
                 string encodedFileName = encodedUrlParameter + ".png";
 
+                string Url = string.Format("http://{0}/thumb/{1}", Authority, encodedUrlParameter);
+                if(frontOnly)
+                {
+                    Url = "?frontOnly=true";
+                }
+
                 var requestMessage = new HttpRequestMessage() {
-                    RequestUri = new Uri(string.Format("http://{0}/thumb/{1}", Authority, encodedUrlParameter)),
+                    RequestUri = new Uri(Url),
                      Method = HttpMethod.Get
                 };
 
